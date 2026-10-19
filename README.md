@@ -1,8 +1,8 @@
 # Building Placement Guide
 
-建築前に、設備の屋内・屋外の設置条件や推奨環境を短く表示する RimWorld QoL Mod。
+建築メニューで設備をクリックした際の簡易説明欄の先頭に、屋内・屋外の設置条件や推奨環境を表示する RimWorld QoL Mod。詳細情報（i）を開く必要はありません。
 
-Display indoor/outdoor placement guidance in building tooltips before construction.
+Display indoor/outdoor placement guidance **at the top of the Architect selection description**, as soon as a building is selected. No detailed info panel required.
 
 ## 表示 / Labels
 
