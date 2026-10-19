@@ -72,7 +72,7 @@ namespace BuildingPlacementGuide.Screen16
                     Find.DesignatorManager.Select(designator);
                     ctx.Require(Find.DesignatorManager.SelectedDesignator != null,
                         "No active Architect build selection");
-                    ctx.Require(designator.Desc.StartsWith("設置環境：") ||
+                    ctx.Require(designator.Desc.StartsWith("設置環境: ") ||
                                 designator.Desc.StartsWith("Placement: "),
                         "Placement information not first in selected designator");
                     Log.Message("BPG_SCREEN16_SELECTED " + defName + " first=" +
