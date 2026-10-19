@@ -2,7 +2,7 @@
 
 ## Goal
 
-Show the building's placement environment *before* the player constructs it, using only a single short line in the Architect menu tooltip. Never modify placement rules, work speeds, or production.
+Show the building's placement environment **as soon as its Architect menu button is clicked**, as the **first line of the selection information panel** (`Designator_Build.Desc`), not in the separate detailed Info Card. Long vanilla or Mod descriptions must not hide the placement line below the fold. Never modify placement rules, work speeds, or production.
 
 Examples:
 
@@ -10,7 +10,7 @@ Examples:
 - Placement: No roof allowed / 設置環境：屋根不可
 - Placement: No restrictions / 設置環境：制約なし
 
-Do not show speed percentages, process implementation details, or framework names.
+Preserve the original building description below this short line, separated by one blank line. Do not show speed percentages, process implementation details, or framework names.
 
 ## Classification vocabulary
 
@@ -72,3 +72,7 @@ Both loaded games: process exit 0, Unity errors 0, all assertions succeeded. The
 - Construction/building placement does not require a regression test for this description-only patch, but remains unverified in this acceptance.
 
 **Status:** compiled production DLL included, Vanilla/MO loaded-description verification PASS. Do not present this as exhaustive support for all Mod-specific placement rules.
+
+## First-line display change (2026-10-19)
+
+Architect selection previously appended its placement label to the end of the description; with long Mod descriptions it might not be immediately visible. The patch now **prepends** the line to `Designator_Build.Desc`, before existing text. The native test asserts it starts with the expected placement label and retains the original description, rather than merely searching for the label anywhere in the text. Visual screenshots of the GUI itself remain a separate acceptance item.
