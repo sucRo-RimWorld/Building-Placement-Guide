@@ -34,7 +34,7 @@ namespace BuildingPlacementGuide.NativeSmoke
             try
             {
                 AssertLabel("TableStonecutter", "Indoor preferred");
-                AssertLabel("ResearchBench", "Indoor preferred");
+                AssertLabel("SimpleResearchBench", "Indoor preferred");
                 if (profile == "mo")
                 {
                     AssertLabel("DankPyon_Smelter", "No restrictions");
