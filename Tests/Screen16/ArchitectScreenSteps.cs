@@ -46,7 +46,14 @@ namespace BuildingPlacementGuide.Screen16
         [Then("capture selected Architect equipment and its placement condition")]
         public async Task Run(PickleContext ctx)
         {
-            await ctx.WaitUntil(() => ArchitectScreenQuickstart.IsPostLoaded, 90f);
+            await ctx.WaitUntil(() =>
+            {
+                Type t = Type.GetType(
+                    "BuildingPlacementGuide.Screen16.ArchitectScreenQuickstart, BPG.Screen16.Quickstart");
+                PropertyInfo prop = t == null ? null : t.GetProperty(
+                    "IsPostLoaded", BindingFlags.Public | BindingFlags.Static);
+                return prop != null && (bool)prop.GetValue(null, null);
+            }, 90f);
             await ctx.WaitFrames(12);
             string folder = Environment.GetEnvironmentVariable("BPG_SCREENSHOT_DIR");
             ctx.Require(!string.IsNullOrEmpty(folder) && Directory.Exists(folder),
