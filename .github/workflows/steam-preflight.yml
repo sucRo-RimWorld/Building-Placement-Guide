@@ -1,0 +1,66 @@
+name: BPG Workshop release source preflight (no Steam upload)
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+jobs:
+  preflight:
+    if: >-
+      github.event.issue.user.login == 'sucRo0629' &&
+      github.event.issue.title == '[preflight:bpg-private]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify exact main/source and author
+        shell: bash
+        env:
+          REQUEST: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REPOSITORY" == 'sucRo-RimWorld/Building-Placement-Guide' ]]
+          [[ "$GITHUB_REF" == 'refs/heads/main' ]]
+          [[ "$REQUEST" =~ ^source_sha=([a-f0-9]{40})$ ]]
+          [[ "${BASH_REMATCH[1]}" == "$GITHUB_SHA" ]]
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify preview, metadata and immutable private subscriber payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m py_compile Tools/SteamPublisher/publisher.py Tools/SteamPublisher/tags.py
+          python3 - <<'PY'
+          import struct, zlib
+          from pathlib import Path
+          p=Path('About/Preview.png')
+          data=p.read_bytes()
+          assert data[:8] == b'\x89PNG\r\n\x1a\n', 'not PNG'
+          assert struct.unpack('>II',data[16:24]) == (640,380), 'preview size'
+          at=8
+          while at < len(data):
+              n=struct.unpack('>I',data[at:at+4])[0]
+              ty=data[at+4:at+8]
+              chunk=data[at+8:at+8+n]
+              crc=struct.unpack('>I',data[at+8+n:at+12+n])[0]
+              assert zlib.crc32(ty+chunk)&0xffffffff == crc, 'PNG CRC'
+              at+=12+n
+              if ty==b'IEND': break
+          assert at == len(data), 'PNG trailing data'
+          print('BPG_PREVIEW_PNG_PASS: 640x380, chunks CRC validated')
+          PY
+          mkdir -p Dist
+          python3 Tools/SteamPublisher/publisher.py build --checkout . --output Dist/bpg-private.zip --repo "$GITHUB_REPOSITORY" --operation create_private
+          test "$(sha256sum Dist/bpg-private.zip | cut -d' ' -f1)" = "$(cat Dist/bpg-private.sha256)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bpg-private-release-candidate
+          path: |
+            Dist/bpg-private.zip
+            Dist/bpg-private.sha256
+            Dist/bpg-private.json
+          retention-days: 3
+          if-no-files-found: error
