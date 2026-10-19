@@ -23,6 +23,12 @@ namespace BuildingPlacementGuide
             if (!label.HasValue)
                 return;
 
+            // The selected command's panel already renders the guidance at its top.
+            // Do not repeat it in the descriptive text immediately below the costs.
+            if (Find.DesignatorManager != null &&
+                object.ReferenceEquals(Find.DesignatorManager.SelectedDesignator, __instance))
+                return;
+
             string key = "BPG_" + label.Value;
             string line = "BPG_Placement".Translate() + ": " + key.Translate();
             // The Architect selection card can show only the beginning of a long description.
