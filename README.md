@@ -1,4 +1,4 @@
-# Building Placement Guide
+# Indoor or Outdoor? – 屋内・屋外設置ガイド
 
 建築メニューで設備をクリックした際の簡易説明欄の先頭に、屋内・屋外の設置条件や推奨環境を表示する RimWorld QoL Mod。詳細情報（i）を開く必要はありません。
 
