@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BPG_Placement>Placement</BPG_Placement>
+  <BPG_IndoorRequired>Indoor required</BPG_IndoorRequired>
+  <BPG_OutdoorRequired>Outdoor required</BPG_OutdoorRequired>
+  <BPG_IndoorPreferred>Indoor preferred</BPG_IndoorPreferred>
+  <BPG_OutdoorPreferred>Outdoor preferred</BPG_OutdoorPreferred>
+  <BPG_RoofRequired>Roof required</BPG_RoofRequired>
+  <BPG_RoofForbidden>No roof allowed</BPG_RoofForbidden>
+  <BPG_Unrestricted>No restrictions</BPG_Unrestricted>
+  <BPG_Undetermined>Cannot determine</BPG_Undetermined>
+</LanguageData>
