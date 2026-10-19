@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -68,6 +69,27 @@ namespace BuildingPlacementGuide.Screen16
                     ThingDef def = DefDatabase<ThingDef>.GetNamedSilentFail(defName);
                     ctx.Require(def != null, "Requested equipment absent: " + defName);
                     Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Architect);
+                    var architect = (MainTabWindow_Architect)MainButtonDefOf.Architect.TabWindow;
+                    var flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+                    var tabsField = typeof(MainTabWindow_Architect).GetField("desPanelsCached", flags);
+                    var activeField = typeof(MainTabWindow_Architect).GetField("selectedDesPanel", flags);
+                    ctx.Require(tabsField != null && activeField != null,
+                        "Architect category panel fields unavailable");
+                    var tabs = tabsField.GetValue(architect) as IEnumerable;
+                    ctx.Require(tabs != null, "Architect category panels unavailable");
+                    ArchitectCategoryTab production = null;
+                    foreach (object item in tabs)
+                    {
+                        var candidate = item as ArchitectCategoryTab;
+                        if (candidate != null && candidate.def != null &&
+                            candidate.def.defName == "Production")
+                        {
+                            production = candidate;
+                            break;
+                        }
+                    }
+                    ctx.Require(production != null, "Production Architect category absent");
+                    activeField.SetValue(architect, production);
                     var designator = new Designator_Build(def);
                     Find.DesignatorManager.Select(designator);
                     ctx.Require(Find.DesignatorManager.SelectedDesignator != null,
