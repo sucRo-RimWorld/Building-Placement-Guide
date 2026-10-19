@@ -21,9 +21,10 @@ namespace BuildingPlacementGuide.NativeSmoke
                 throw new InvalidOperationException("Missing original ThingDef: " + defName);
             string desc = new Designator_Build(def).Desc;
             string wanted = "Placement: " + expected;
-            if (desc == null || !desc.Contains(wanted))
+            if (desc == null || !desc.StartsWith(wanted + "\n\n", StringComparison.Ordinal) ||
+                (def.description != null && !desc.Contains(def.description)))
                 throw new InvalidOperationException(
-                    "Incorrect description for " + defName + ": expected " +
+                    "Incorrect first-line placement text or missing original description for " + defName + ": expected " +
                     wanted + ", actual=" + (desc ?? "<null>"));
             Log.Message("BPG_NATIVE16_CHECK " + defName + " -> " + expected);
         }
