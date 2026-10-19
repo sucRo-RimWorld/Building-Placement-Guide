@@ -1,5 +1,5 @@
 [h2]This Building: Indoor or Outdoor?[/h2]
-This was so inconvenient that I assumed someone must already have made a Mod for it. I searched, couldn't find one, and made it while thinking, "Seriously?"
+In the vanilla UI, you can only tell by checking a building's work speed after it has been built. That was so inconvenient that I assumed a Mod with this feature must already exist. But there wasn't one, so I made it while thinking, "Seriously?"
 
 When you select a building in the Architect menu, a short placement requirement or recommendation appears at the top of its normal description. You don't need to open the detailed Info panel.
 
@@ -18,7 +18,7 @@ This Mod only displays guidance. It does not change building behavior. Some Mod-
 [hr][/hr]
 
 [h2]この建物、屋内？ 屋外？[/h2]
-不便すぎて、当然すでに同じ機能のModがあると思って探したのですが、見つからず。「嘘だろ」と思いながら作りました。
+バニラUIだと建てたあとの作業速度でしか分からず、あまりに不便なので当然、同じ機能のModがあると思ったらなかったので「嘘だろ」と思いながら作りました。
 
 建築メニューで建物を選ぶと、設置条件や推奨環境を通常の説明欄の先頭に表示します。詳細情報（i）を開く必要はありません。
 
