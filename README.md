@@ -1,4 +1,4 @@
-# Indoor or Outdoor? – 屋内・屋外設置ガイド
+# This Building: Indoor or Outdoor?
 
 建築メニューで設備をクリックした際の簡易説明欄の先頭に、屋内・屋外の設置条件や推奨環境を表示する RimWorld QoL Mod。詳細情報（i）を開く必要はありません。
 
@@ -33,3 +33,7 @@ dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Rele
 ```
 
 ビルド成功時は `1.6/Assemblies/BuildingPlacementGuide.dll` にコピーされます。リポジトリには実際の 1.6 ビルド成果物を収録済み（[ビルドログ #39227436183](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39227436183)、警告0・エラー0）。
+
+## Steam Workshop
+
+The paste-ready English/Japanese description is in [Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt). It contains a short development note, explanations of the displayed placement labels, and a Ko-fi linked icon. The illustration-free title-only preview is supplied separately as a 640×380 PNG. Steam publication and its icon rendering are not yet verified.
