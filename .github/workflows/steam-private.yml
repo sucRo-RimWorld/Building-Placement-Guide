@@ -1,4 +1,4 @@
-name: AMJ Workshop publication — author approval required
+name: BPG creator-private Workshop upload — author approval required
 on:
   issues:
     types: [opened]
@@ -6,15 +6,15 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: amj-steam-release
+  group: bpg-steam-private-release
   cancel-in-progress: false
 
 jobs:
   preflight:
     if: >-
       github.event.issue.user.login == 'sucRo0629' &&
-      (github.event.issue.title == '[publish:amj-create-private]' ||
-       github.event.issue.title == '[publish:amj-update]')
+      (github.event.issue.title == '[publish:bpg-create-private]' ||
+       github.event.issue.title == '[publish:bpg-update]')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -31,12 +31,13 @@ jobs:
         run: |
           set -euo pipefail
           [[ "$REQUEST_AUTHOR" == "sucRo0629" ]] || exit 2
+          [[ "$GITHUB_REPOSITORY" == "sucRo-RimWorld/Building-Placement-Guide" ]] || exit 2
           [[ "$GITHUB_EVENT_NAME" == "issues" && "$GITHUB_REF" == "refs/heads/main" ]] || exit 2
           [[ "$REQUEST_BODY" =~ ^source_sha=([0-9a-f]{40})$ ]] || exit 2
           [[ "$GITHUB_SHA" == "${BASH_REMATCH[1]}" ]] || exit 2
           case "$REQUEST_TITLE" in
-            '[publish:amj-create-private]') mode=create_private ;;
-            '[publish:amj-update]') mode=update_existing ;;
+            '[publish:bpg-create-private]') mode=create_private ;;
+            '[publish:bpg-update]') mode=update_existing ;;
             *) exit 2 ;;
           esac
           echo "operation=$mode" >> "$GITHUB_OUTPUT"
