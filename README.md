@@ -12,7 +12,9 @@ Display indoor/outdoor placement guidance in building tooltips before constructi
 
 ## 現在の開発状態 / Status
 
-初期ソース実装（未ビルド・未実ゲーム検証）。**現時点で導入可能な完成版ではありません。**
+**RimWorld 1.6:** DLL ビルド済み。Vanilla・MO の実ゲーム読込テストで建築メニュー用説明文の判定が 7/7 PASS、Unity ERROR 0、両構成 exit 0 を確認（[Actions #39226208941](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39226208941)）。
+
+`1.6/Assemblies/BuildingPlacementGuide.dll` を同梱。Harmony が必要。ゲーム画面上のツールチップ表示を人間が確認する最終目視、RimWorld 1.7、および未知の他Mod全般の網羅検証は未実施。
 
 - RimWorld 1.6 向けの建築メニューツールチップ拡張。
 - Vanilla の通常作業台と研究設備、屋根不可設備を自動判定。
@@ -30,4 +32,4 @@ RimWorld の所有する DLL はリポジトリに同梱しません。SDK と�
 dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Release -p:RimWorldManagedDir="C:/Games/RimWorld/RimWorldWin64_Data/Managed" -p:HarmonyDllPath="C:/Games/RimWorld/Mods/Harmony/Current/Assemblies/0Harmony.dll"
 ```
 
-ビルド成功時は `1.6/Assemblies/BuildingPlacementGuide.dll` にコピーされます。ビルドの成功と実ゲームでの挙動は未確認です。
+ビルド成功時は `1.6/Assemblies/BuildingPlacementGuide.dll` にコピーされます。リポジトリには実際の 1.6 ビルド成果物を収録済み（[ビルドログ #39224332417](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39224332417)、警告0・エラー0）。
