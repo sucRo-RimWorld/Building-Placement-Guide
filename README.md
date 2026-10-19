@@ -37,3 +37,7 @@ dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Rele
 ## Steam Workshop
 
 The paste-ready English/Japanese description is in [Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt). It contains a short development note, explanations of the displayed placement labels, and a Ko-fi linked icon. The illustration-free title-only preview is supplied separately as a 640×380 PNG. Steam publication and its icon rendering are not yet verified.
+
+## Support
+
+[![Support on Ko-fi](https://storage.ko-fi.com/cdn/kofi5.png?v=6)](https://ko-fi.com/sucro0629)
