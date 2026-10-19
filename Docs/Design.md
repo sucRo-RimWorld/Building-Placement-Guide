@@ -46,15 +46,29 @@ Other Mods can explicitly annotate a `ThingDef`:
 
 The extension requires Building Placement Guide to be installed when used directly; external compatibility patches should be conditional on its packageId.
 
-## Acceptance checks (not yet executed)
+## Loaded-game acceptance (2026-10-19)
 
-- Vanilla smithy/stonecutter: indoor preferred; building unchanged.
-- MO DankPyon_Smelter: unrestricted (Processor Framework, not the apparent workbench outdoors penalty).
-- MO drying rack/charcoal pile: roof forbidden.
-- Vanilla workbench and research bench outdoors stat detection behaves as intended.
-- In a Mod using a custom/unrecognized production mechanism, show Cannot determine rather than fabricate No restrictions.
-- Modded special rules via extension override the inferred category.
-- Japanese and English tooltip strings; no duplicated lines in combination with Relevant Stats In Description.
-- Save/load is unaffected; no simulation ticks or map scans added.
+Verified with original licensed RimWorld Linux 1.6, a disposable copy, and a separate test-only assembly invoking the *actual patched* `Designator_Build.Desc` method. [Successful native run #39226208941](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39226208941), BPG source commit `3897296446cc87f455ef1ac1dad700db535b299a`, production DLL SHA-256 `2a9e24051fbe2454597b746b47a5007eef0d58dfd10172f85d6430ac0d33ecd9`.
 
-**Status:** source implementation only; compile and actual in-game acceptance have not been performed. Do not treat these expected results as PASS.
+| Loaded provider | Actual ThingDef | Expected tooltip value | Result |
+| --- | --- | --- | --- |
+| Vanilla | TableStonecutter | Indoor preferred | PASS |
+| Vanilla | SimpleResearchBench | Indoor preferred | PASS |
+| MO | TableStonecutter | Indoor preferred | PASS |
+| MO | SimpleResearchBench | Indoor preferred | PASS |
+| MO | DankPyon_Smelter | No restrictions | PASS |
+| MO | DankPyon_DryingRack_Small | No roof allowed | PASS |
+| MO | DankPyon_CharcoalPile | No roof allowed | PASS |
+
+Both loaded games: process exit 0, Unity errors 0, all assertions succeeded. The test did not manipulate a player's save or permanently stage any Mod.
+
+## Coverage not yet demonstrated
+
+- Actual human visual review of text layout in Architect menu.
+- Explicit extension-based overrides in a separate third-party Mod.
+- Other custom processing systems or hybrid Processor Framework workbench/bill behavior.
+- Non-Vanilla room/hardcoded prerequisites beyond the heuristics listed above.
+- RimWorld 1.7 and localization appearance under Japanese UI.
+- Construction/building placement does not require a regression test for this description-only patch, but remains unverified in this acceptance.
+
+**Status:** compiled production DLL included, Vanilla/MO loaded-description verification PASS. Do not present this as exhaustive support for all Mod-specific placement rules.
