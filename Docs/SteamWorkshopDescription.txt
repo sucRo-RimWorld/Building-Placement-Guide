@@ -1,0 +1,39 @@
+[h2]This Building: Indoor or Outdoor?[/h2]
+This was so inconvenient that I assumed someone must already have made a Mod for it. I searched, couldn't find one, and made it while thinking, "Seriously?"
+
+When you select a building in the Architect menu, a short placement requirement or recommendation appears at the top of its normal description. You don't need to open the detailed Info panel.
+
+[h2]Placement labels[/h2]
+[b]Indoor required[/b] — The building must be indoors.
+[b]Outdoor required[/b] — The building must be outdoors.
+[b]Indoor preferred[/b] — Using it outdoors carries a penalty.
+[b]Outdoor preferred[/b] — Using it indoors carries a penalty.
+[b]Roof required[/b] — The building must be under a roof.
+[b]No roof allowed[/b] — The building cannot be used under a roof.
+[b]No restrictions[/b] — No restriction is detected by the supported checks.
+[b]Cannot determine[/b] — The placement conditions cannot be reliably determined.
+
+This Mod only displays guidance. It does not change building behavior. Some Mod-specific restrictions cannot be detected automatically.
+
+[hr][/hr]
+
+[h2]この建物、屋内？ 屋外？[/h2]
+不便すぎて、当然すでに同じ機能のModがあると思って探したのですが、見つからず。「嘘だろ」と思いながら作りました。
+
+建築メニューで建物を選ぶと、設置条件や推奨環境を通常の説明欄の先頭に表示します。詳細情報（i）を開く必要はありません。
+
+[h2]表示項目[/h2]
+[b]屋内必須[/b] — 屋内への設置が必須。
+[b]屋外必須[/b] — 屋外への設置が必須。
+[b]屋内推奨[/b] — 屋外で使用するとペナルティが発生する。
+[b]屋外推奨[/b] — 屋内で使用するとペナルティが発生する。
+[b]屋根必須[/b] — 屋根の下に設置する必要がある。
+[b]屋根不可[/b] — 屋根の下では使用できない。
+[b]制約なし[/b] — 対応している判定では設置制約を検出していない。
+[b]判定不能[/b] — 設置条件を正確に判定できない。
+
+表示するのは設置環境の案内のみで、設備の性能や設置条件自体は変更しません。他Mod固有の制約には自動判定できないものもあります。
+
+[hr][/hr]
+
+[url=https://ko-fi.com/sucro0629][img]https://storage.ko-fi.com/cdn/kofi5.png?v=6[/img][/url]
