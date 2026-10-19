@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BPG_Placement>設置環境</BPG_Placement>
+  <BPG_IndoorRequired>屋内必須</BPG_IndoorRequired>
+  <BPG_OutdoorRequired>屋外必須</BPG_OutdoorRequired>
+  <BPG_IndoorPreferred>屋内推奨</BPG_IndoorPreferred>
+  <BPG_OutdoorPreferred>屋外推奨</BPG_OutdoorPreferred>
+  <BPG_RoofRequired>屋根必須</BPG_RoofRequired>
+  <BPG_RoofForbidden>屋根不可</BPG_RoofForbidden>
+  <BPG_Unrestricted>制約なし</BPG_Unrestricted>
+  <BPG_Undetermined>判定不能</BPG_Undetermined>
+</LanguageData>
