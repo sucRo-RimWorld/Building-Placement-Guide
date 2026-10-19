@@ -76,3 +76,7 @@ Both loaded games: process exit 0, Unity errors 0, all assertions succeeded. The
 ## First-line display change (2026-10-19)
 
 Architect selection previously appended its placement label to the end of the description; with long Mod descriptions it might not be immediately visible. The patch now **prepends** the line to `Designator_Build.Desc`, before existing text. The native test asserts it starts with the expected placement label and retains the original description, rather than merely searching for the label anywhere in the text. Visual screenshots of the GUI itself remain a separate acceptance item.
+
+## First-line loaded-game verification (2026-10-19)
+
+The rebuilt DLL SHA-256 `dd38531186382aff74ccf418fef512b0cef1b136000d7d579012240568935d9a` compiled against the owned original game (warnings 0, errors 0; [build #39227436183](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39227436183)). The strengthened test requires `Designator_Build.Desc` to **start** with `Placement: <label>` followed by a blank line and also include the original building description. [Vanilla/MO loaded game test #39227719975](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39227719975): 2/2 Vanilla + 5/5 MO checks PASS, both processes exit 0, zero Unity errors. This validates the loaded method's output, not screenshots of the on-screen Architect panel.
