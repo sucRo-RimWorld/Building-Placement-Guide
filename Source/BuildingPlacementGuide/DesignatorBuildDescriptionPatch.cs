@@ -25,7 +25,9 @@ namespace BuildingPlacementGuide
 
             string key = "BPG_" + label.Value;
             string line = "BPG_Placement".Translate() + ": " + key.Translate();
-            __result = string.IsNullOrEmpty(__result) ? line : __result.TrimEnd() + "\n\n" + line;
+            // The Architect selection card can show only the beginning of a long description.
+            // Keep the placement condition visible without opening the detailed Info Card.
+            __result = string.IsNullOrEmpty(__result) ? line : line + "\n\n" + __result;
         }
     }
 }
