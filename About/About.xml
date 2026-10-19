@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Indoor or Outdoor? – 屋内・屋外設置ガイド</name>
+  <name>This Building: Indoor or Outdoor?</name>
   <author>sucRo</author>
   <packageId>sucro.buildingplacementguide</packageId>
   <supportedVersions>
