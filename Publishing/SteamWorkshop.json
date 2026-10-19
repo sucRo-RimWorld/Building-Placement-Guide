@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "repository": "sucRo-RimWorld/Building-Placement-Guide",
+  "package_id": "sucro.buildingplacementguide",
+  "workshop_id": null,
+  "visibility_policy": "private_only"
+}

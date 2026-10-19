@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Manifest>
+  <identifier>BuildingPlacementGuide</identifier>
+  <version>0.1.0</version>
+  <dependencies />
+  <incompatibleWith />
+  <loadBefore />
+  <loadAfter />
+  <manifestUri>https://raw.githubusercontent.com/sucRo-RimWorld/Building-Placement-Guide/main/About/Manifest.xml</manifestUri>
+</Manifest>

@@ -1,0 +1,6 @@
+# This Building: Indoor or Outdoor?
+0.1.0 - Initial private release / 初回非公開版
+- Show placement environment guidance before construction in the Architect menu.
+- Localized Japanese and English labels. Supports RimWorld 1.6; Harmony required.
+- 建築メニューの選択時に設置環境を表示。
+- 日本語・英語対応。RimWorld 1.6用。Harmony必須。
