@@ -14,7 +14,7 @@ Display indoor/outdoor placement guidance **at the top of the Architect selectio
 
 **RimWorld 1.6:** DLL ビルド済み。建築メニューの簡易説明欄の**先頭行**へ設置条件を表示。Vanilla・MOの実ゲーム読込テストで先頭表示と元の説明文の維持を 7/7 PASS、Unity ERROR 0、両構成 exit 0 で確認（[Actions #39227719975](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39227719975)）。
 
-`1.6/Assemblies/BuildingPlacementGuide.dll` を同梱。Harmony が必要。ゲーム画面上のツールチップ表示を人間が確認する最終目視、RimWorld 1.7、および未知の他Mod全般の網羅検証は未実施。
+`1.6/Assemblies/BuildingPlacementGuide.dll` を同梱。Harmony が必要。Windows版RimWorld 1.6の建築メニュー表示は作者が実ゲームで確認済み。RimWorld 1.7、および未知の他Mod全般の網羅検証は未実施。
 
 - RimWorld 1.6 向けの、建築メニュー選択時に出る簡易説明欄の拡張。
 - Vanilla の通常作業台と研究設備、屋根不可設備を自動判定。
@@ -34,9 +34,19 @@ dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Rele
 
 ビルド成功時は `1.6/Assemblies/BuildingPlacementGuide.dll` にコピーされます。リポジトリには実際の 1.6 ビルド成果物を収録済み（[ビルドログ #39227436183](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/actions/runs/39227436183)、警告0・エラー0）。
 
-## Steam Workshop
+## Steam Workshop / YADA
 
-The paste-ready English/Japanese description is in [Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt). It contains a short development note, explanations of the displayed placement labels, and a Ko-fi linked icon. The illustration-free title-only preview is supplied separately as a 640×380 PNG. Steam publication and its icon rendering are not yet verified.
+**GitHub `main` のフォルダをそのまま YADA でアップロードする方式**を使用します。専用の配布ZIPやGitHub Actionsパブリッシャーは使用しません。
+
+1. `main` を取得し、リポジトリのルートフォルダ（`About/`、`1.6/`、`Languages/`、`.rimignore` が直下にあるフォルダ）を `RimWorld/Mods/` に置く。
+2. RimWorld 1.6で Harmony と YADA (Yet Another Dev Assistant) を有効化する。YADAは**作者のアップロード補助ツール**で、購読者に依存Modとしては要求しない。
+3. ゲーム内Mod管理から **This Building: Indoor or Outdoor?** を選んで Workshop アップロードを実行する。初回アイテムは **非公開 / Private** を指定して作成する。
+4. アップロード前にYADAの除外後ファイル一覧・サイズを確認する。`.rimignore` により `Source/`、`Docs/`、`Tests/` などはSteamへ送信しない。
+5. 作成されたWorkshop IDと公開範囲、説明文、Preview、依存関係、アップロード内容をSteamで確認する。ID未取得の状態で `About/PublishedFileId.txt` を作成しない。
+
+`About/About.xml` の `description` にWorkshop用説明（英語・日本語・Ko-fiの画像リンク）を収録してあり、[Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt) と一致させています。Previewは [About/Preview.png](About/Preview.png)（640×380）。
+
+**YADAはRimWorldのWorkshopアップロード用ファイルをフィルタリングするだけです。Steam上での非公開設定・初回作成・更新はゲームUIで確認してください。** このリポジトリからSteamへの自動アップロードは実行しません。
 
 ## Support
 
