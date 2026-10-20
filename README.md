@@ -1,4 +1,4 @@
-# This Building: Indoor or Outdoor?
+# This Building - Indoor or Outdoor
 
 建築メニューで設備をクリックした際の簡易説明欄の先頭に、屋内・屋外の設置条件や推奨環境を表示する RimWorld QoL Mod。詳細情報（i）を開く必要はありません。
 
@@ -40,7 +40,7 @@ dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Rele
 
 1. `main` を取得し、リポジトリのルートフォルダ（`About/`、`1.6/`、`Languages/`、`.rimignore` が直下にあるフォルダ）を `RimWorld/Mods/` に置く。
 2. RimWorld 1.6で Harmony と YADA (Yet Another Dev Assistant) を有効化する。YADAは**作者のアップロード補助ツール**で、購読者に依存Modとしては要求しない。
-3. ゲーム内Mod管理から **This Building: Indoor or Outdoor?** を選んで Workshop アップロードを実行する。初回アイテムは **非公開 / Private** を指定して作成する。
+3. ゲーム内Mod管理から **This Building - Indoor or Outdoor** を選んで Workshop アップロードを実行する。初回アイテムは **非公開 / Private** を指定して作成する。
 4. アップロード前にYADAの除外後ファイル一覧・サイズを確認する。`.rimignore` により `Source/`、`Docs/`、`Tests/` などはSteamへ送信しない。
 5. 作成されたWorkshop IDと公開範囲、説明文、Preview、依存関係、アップロード内容をSteamで確認する。ID未取得の状態で `About/PublishedFileId.txt` を作成しない。
 
