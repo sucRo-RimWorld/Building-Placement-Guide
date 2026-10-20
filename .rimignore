@@ -1,0 +1,53 @@
+# YADA .rimignore -- filenames/directory names are matched at each level.
+# Anything NOT listed remains part of the Steam upload.
+# Kept: About/, 1.6/Assemblies/, Languages/, LICENSE.
+# YADA traverses the Mod's installed root; ignore Git/development sources.
+.git
+.github
+.gitattributes
+.gitignore
+.rimignore
+.workshopignore
+.editorconfig
+.idea
+.vs
+.vscode
+.DS_Store
+Thumbs.db
+AGENTS.md
+README.md
+Art
+Docs
+Publishing
+Source
+Sources
+Scripts
+Tests
+TestResults
+Tools
+DevQuickstarts
+DevRimTests
+_AMJ_PublishStaging
+__pycache__
+.pytest_cache
+bin
+obj
+*.bat
+*.cmd
+*.ps1
+*.py
+*.pyc
+*.cs
+*.csproj
+*.sln
+*.zip
+*.7z
+*.b64
+*.pdb
+*.mdb
+*.bak
+*.tmp
+*.cache
+*.user
+*.log
+*.nupkg
