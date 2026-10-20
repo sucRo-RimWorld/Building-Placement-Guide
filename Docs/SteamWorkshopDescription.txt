@@ -1,4 +1,4 @@
-[h2]This Building: Indoor or Outdoor?[/h2]
+[h2]This Building - Indoor or Outdoor[/h2]
 In the vanilla UI, you can only tell by checking a building's work speed after it has been built. That was so inconvenient that I assumed a Mod with this feature must already exist. But there wasn't one, so I made it while thinking, "Seriously?"
 
 When you select a building in the Architect menu, a short placement requirement or recommendation appears at the top of its normal description. You don't need to open the detailed Info panel.
