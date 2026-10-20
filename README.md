@@ -44,7 +44,7 @@ dotnet build Source/BuildingPlacementGuide/BuildingPlacementGuide.csproj -c Rele
 4. アップロード前にYADAの除外後ファイル一覧・サイズを確認する。`.rimignore` により `Source/`、`Docs/`、`Tests/` などはSteamへ送信しない。
 5. 作成されたWorkshop IDと公開範囲、説明文、Preview、依存関係、アップロード内容をSteamで確認する。ID未取得の状態で `About/PublishedFileId.txt` を作成しない。
 
-`About/About.xml` の `description` にWorkshop用説明（英語・日本語・Ko-fiの画像リンク）を収録してあり、[Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt) と一致させています。Previewは [About/Preview.png](About/Preview.png)（640×380）。
+`About/About.xml` の `description` は英日併記の **Markdown表記**（WorkshopのBBCodeタグを含めない）です。Workshop掲載用のBBCodeは [Docs/SteamWorkshopDescription.txt](Docs/SteamWorkshopDescription.txt) に分けて保持しています。YADA経由の初回アップロード後、Steam側で説明文の書式・Ko-fi画像ボタンが正しく表示されるか確認し、必要に応じてWorkshop用BBCodeへ差し替えてください。Previewは [About/Preview.png](About/Preview.png)（640×380）。
 
 **YADAはRimWorldのWorkshopアップロード用ファイルをフィルタリングするだけです。Steam上での非公開設定・初回作成・更新はゲームUIで確認してください。** このリポジトリからSteamへの自動アップロードは実行しません。
 
