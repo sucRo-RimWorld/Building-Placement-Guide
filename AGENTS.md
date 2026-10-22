@@ -1,0 +1,6 @@
+# This Building - Indoor or Outdoor — agent instructions
+
+1. Start by reading this file and `main:Docs/Coordination.md`, then shared [AMJ Project AGENTS](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/AGENTS.md) and [SharedRules](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/SharedRules.md).
+2. This repository owns only the building placement guidance QoL Mod. Read `Docs/Design.md`, `README.md` and actual code/metadata before editing. Preserve verified labels including `制約なし` and existing release/upload method; do not infer loaded-game proof from documentation.
+3. Every version bump and release candidate must review and, as needed, update the root `README.md` in the same PR as the existing version metadata, per Project [Mod description guidelines](https://github.com/sucRo-RimWorld/Ancient-Medieval-Japan-Project/blob/main/Docs/ModDescriptionGuidelines.md). A stale README blocks release. Do not equate GitHub changes with a YADA/Workshop update.
+4. Ordinary changes: topic branch → PR → check exact head → merge. Do not write directly to main, run native RimWorld tests or publish through Steam without the appropriate separate authorization. Main-only Coordination carries inter-workstream handoffs; design/source owns final specifications.
